@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --background-color: #232830;
+  --card-background-color: #ffffff;
+  --accent-color: #ff7575;
+  --text-color-primary: #ffffff;
+  --text-color-secondary: #0f1217;
+  --text-color-tertiary: #909090;
+  --border-color: #4d4d4d;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  padding: 3rem 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Recursive", sans-serif;
+  font-weight: 700;
+  color: var(--text-color-secondary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color-primary);
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 300px;
+  background-color: var(--background-color);
+}
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__logo-link {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--text-color-primary);
+}
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.site-header__nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.site-header__nav-item {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--text-color-primary);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 3rem 300px;
+  margin-top: 3rem;
+}
+
+.hero__title {
+  font-family: "Recursive";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 71px;
+  color: var(--accent-color);
+  margin-top: 1rem;
+}
+
+.hero__subtitle {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 29px;
+  color: var(--text-color-primary);
+  margin-top: 1rem;
+}
+
+.articles {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 300px;
+  border-top: 3px solid var(--border-color);
+}
+
+.articles__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.view-toggle__button {
+  cursor: pointer;
+  outline: none;
+  background: none;
+  border: none;
+}
+
+.tag-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+}
+
+.tag-list::after {
+  content: "";
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  right: -1px;
+  top: 0;
+  background: linear-gradient(
+    to right,
+    rgba(35, 40, 48, 0),
+    rgba(35, 40, 48, 0.9) 80%
+  );
+}
+
+.tag-list__item {
+  font-family: "Recursive";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 27px;
+  color: var(--text-color-tertiary);
+  cursor: pointer;
+}
+
+.articles__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card-background-color);
+  border: 1px solid var(--background-color);
+  border-radius: 22px;
+  padding: 1.5rem;
+}
+
+.article-card__title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  color: var(--text-color-secondary);
+  margin-top: 2rem;
+}
+
+.article-card__description {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-color-secondary);
+  margin-top: 1rem;
+}
+
+.article-card__footer {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding-top: 1rem;
+  margin-top: auto;
+}
+
+.article-card__date {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-color-secondary);
+  position: relative;
+}
+
+.article-card__date::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: var(--text-color-secondary);
+  border-radius: 50%;
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.article-card__tag {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--text-color-secondary);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.pagination__link {
+  font-family: "Recursive";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 25px;
+  color: var(--text-color-tertiary);
+  padding: 1rem 1.5rem;
+}
+
+.pagination__link--active {
+  border-top: 3px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 300px;
+  background-color: var(--background-color);
+  margin-top: 4rem;
+  border-top: 3px solid var(--border-color);
+}
+
+.site-footer__branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.site-footer__logo {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 38px;
+  color: var(--text-color-primary);
+}
+
+.site-footer__author {
+  padding: 0.4rem 0.75rem;
+  background-color: #4699e0;
+  border-radius: 5px;
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 24px;
+  color: var(--text-color-primary);
+}
+
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 19px;
+  line-height: 24px;
+  color: var(--text-color-primary);
+  padding: 0.4rem 0.75rem;
+  background-color: #4699e0;
+  border-radius: 5px;
+}
